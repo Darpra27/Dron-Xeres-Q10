@@ -25,16 +25,23 @@
           </div>
         </div>
         <div id="Fila1" class="container">
+
           <div id="lon" class="x">
+      
             <canvas id="Longitud"></canvas>
           </div>
           <div id="lat" class="x">
+      
             <canvas id="Latitud"></canvas>
           </div>
+
         </div>
 
-        <div id="Fila" class="container">
+
+          <div id="Fila" class="container">
+
           <div id="alt" class="x">
+      
             <canvas id="Altitud"></canvas>
           </div>
 
@@ -42,21 +49,23 @@
             <canvas id="Velocidad"></canvas>
           </div>
         </div>
-
+     
+      
         <div id="Fila2" class="container">
+
           <div id="vol" class="x">
             <canvas id="Voltaje"></canvas>
-          </div>
-          <!--ygyro-->
+          </div><!--ygyro-->
           <div id="corr" class="x">
             <canvas id="Corriente"></canvas>
-          </div>
-          <!--zgyro-->
-        </div>
-        <!--gyroContainer-->
+          </div><!--zgyro-->
+        </div><!--gyroContainer-->
+      
       </div>
     </div>
-    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.05s" style="max-width: 600px"></div>
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.05s" style="max-width: 600px"> </div>
+
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -69,41 +78,49 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 
-    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.05s" style="max-width: 600px">
-      <div id="googleMap" style="width: 100%; height: 400px"></div>
+   
 
-      <script>
-        function myMap() {
-          var mapProp = {
-            center: new google.maps.LatLng(4.63056, -74.08623),
-            zoom: 100,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-          };
-          // Agregando el mapa al tag de id googleMap
-          var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-
-          // Creando un marker en el mapa
-          var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(4.63056, -74.08623),
-            map: map,
-            title: "Hello World!",
-          });
-        }
-
-        // Inicializando el mapa cuando se carga la página
-        google.maps.event.addDomListener(window, "load", initialize);
-      </script>
-
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARaHq5Qz34Z66eZsgQpmCW149xZLbsgPw&callback=myMap"></script>
-    </div>
+    
   </div>
+  <div id="container">
+    <div id="map"></div>
+
+  </div>
+
+  <script>
+    function initMap(){
+      const ubica={lat: 4.942584,lng:-74.012848};
+      let mapOptions={
+        center:ubica,
+        zoom:12
+      }
+      let map=new google.maps.Map(document.getElementById('map'),mapOptions);
+      let markerOptions={
+        position:new google.maps.LatLng(4.942584, -74.012848)
+      
+      }
+      let marker=new google.maps.Marker(markerOptions);
+      marker.setMap(map);
+
+
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARaHq5Qz34Z66eZsgQpmCW149xZLbsgPw&callback=initMap">
+
+  </script>
 </div>
 <!-- Service End -->
 
+
+
+
+
 <script>
-  window.onload = function () {
+  window.onload = function() {
+    
+
     //Configuration variables
-    var updateInterval = 200; //in ms
+    var updateInterval = 200 //in ms
     var numberElements = 20;
 
     //Globals
@@ -119,197 +136,168 @@
     //chart instances & configuration
 
     var commonOptions = {
-      scales: {
-        xAxes: [
-          {
-            type: "time",
+        scales: {
+          xAxes: [{
+            type: 'time',
             time: {
               displayFormats: {
-                millisecond: "mm:ss:SSS",
-              },
-            },
-          },
-        ],
-        yAxes: [
-          {
-            ticks: {
-              beginAtZero: true,
-            },
-          },
-        ],
-      },
-      legend: { display: false },
-      tooltips: {
-        enabled: false,
-      },
+                millisecond: 'mm:ss:SSS'
+              }
+            }
+          }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        },
+        legend: {display: false},
+        tooltips:{
+          enabled: false
+        }
     };
     var LongitudInstance = new Chart(Longitud, {
-      type: "line",
-
-      data: {
-        datasets: [
-          {
-            label: "Longitud",
-            data: 0,
-            fill: false,
-            borderColor: "#343e9a",
-            pointRadius: 1,
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: Object.assign({}, commonOptions, {
-        title: {
-          display: true,
-          text: "Longitud",
-          fontSize: 18,
+        type: 'line',
+       
+        data: {
+          datasets: [{
+              label: "Longitud",
+              data: 0,
+              fill: false,
+              borderColor: '#343e9a',
+              pointRadius:1,
+              borderWidth: 1
+          }]
         },
-      }),
+        options: Object.assign({}, commonOptions, {
+          title:{
+            display: true,
+            text: "Longitud",
+            fontSize: 18
+          }
+        })
     });
 
     var LatitudInstance = new Chart(Latitud, {
-      type: "line",
-
-      data: {
-        datasets: [
-          {
-            label: "Latitud",
-            data: 0,
-            fill: false,
-            pointRadius: 1,
-            borderColor: "#343e9a",
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: Object.assign({}, commonOptions, {
-        title: {
-          display: true,
-          text: "Latitud",
-          fontSize: 18,
+        type: 'line',
+       
+        data: {
+          datasets: [{
+              label: "Latitud",
+              data: 0,
+              fill: false,
+              pointRadius:1,
+              borderColor: '#343e9a',
+              borderWidth: 1
+          }]
         },
-      }),
-    });
+        options: Object.assign({}, commonOptions, {
+          title:{
+            display: true,
+            text: "Latitud",
+            fontSize: 18
+          }
+        })    });
 
     var AltitudInstance = new Chart(Altitud, {
-      type: "line",
-      data: {
-        datasets: [
-          {
-            label: "Altitud",
-            data: 0,
-            fill: false,
-            borderColor: "#343e9a",
-            pointRadius: 1,
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: Object.assign({}, commonOptions, {
-        title: {
-          display: true,
-          text: "Altitud",
-          fontSize: 18,
+        type: 'line',
+        data: {
+          datasets: [{
+              label: "Altitud",
+              data: 0,
+              fill: false,
+              borderColor: '#343e9a',
+              pointRadius:1,
+              borderWidth: 1
+          }]
         },
-      }),
-    });
+        options: Object.assign({}, commonOptions, {
+          title:{
+            display: true,
+            text: "Altitud",
+            fontSize: 18
+          }
+        })
+      });
 
     var VelocidadInstance = new Chart(Velocidad, {
-      type: "line",
-      data: {
-        datasets: [
-          {
-            label: "Velocidad",
-            data: 0,
-            fill: false,
-            borderColor: "#343e9a",
-            pointRadius: 1,
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: Object.assign({}, commonOptions, {
-        title: {
-          display: true,
-          text: "Velocidad",
-          fontSize: 18,
+        type: 'line',
+        data: {
+          datasets: [{
+              label: "Velocidad",
+              data: 0,
+              fill: false,
+              borderColor: '#343e9a',
+              pointRadius:1,
+              borderWidth: 1
+          }]
         },
-      }),
-    });
+        options: Object.assign({}, commonOptions, {
+          title:{
+            display: true,
+            text: "Velocidad",
+            fontSize: 18
+          }
+        })
+          });
 
     var VoltajeInstance = new Chart(Voltaje, {
-      type: "line",
-      data: {
-        datasets: [
-          {
-            label: "Voltaje",
-            data: 0,
-            fill: false,
-            borderColor: "#343e9a",
-            pointRadius: 1,
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: Object.assign({}, commonOptions, {
-        title: {
-          display: true,
-          text: "Voltaje",
-          fontSize: 18,
+        type: 'line',
+        data: {
+          datasets: [{
+              label: "Voltaje",
+              data: 0,
+              fill: false,
+              borderColor: '#343e9a',
+              pointRadius:1,
+              borderWidth: 1
+          }]
         },
-      }),
-    });
+        options: Object.assign({}, commonOptions, {
+          title:{
+            display: true,
+            text: "Voltaje",
+            fontSize: 18
+          }
+        })
+          });
 
     var CorrienteInstance = new Chart(Corriente, {
-      type: "line",
-      data: {
-        datasets: [
-          {
-            label: "Corriente",
-            data: 0,
-            fill: false,
-            borderColor: "#343e9a",
-            pointRadius: 1,
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: Object.assign({}, commonOptions, {
-        title: {
-          display: true,
-          text: "Corriente",
-          fontSize: 18,
+        type: 'line',
+        data: {
+          datasets: [{
+              label: "Corriente",
+              data: 0,
+              fill: false,
+              borderColor: '#343e9a',
+              pointRadius:1,
+              borderWidth: 1
+          }]
         },
-      }),
-    });
+        options: Object.assign({}, commonOptions, {
+          title:{
+            display: true,
+            text: "Corriente",
+            fontSize: 18
+          }
+        })
+          });
 
     function addData(data) {
-      if (data) {
+      if(data){
         LongitudInstance.data.labels.push(new Date());
-        LongitudInstance.data.datasets.forEach((dataset) => {
-          dataset.data.push(data["longitud"]);
-        });
+        LongitudInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['longitud'])});
         LatitudInstance.data.labels.push(new Date());
-        LatitudInstance.data.datasets.forEach((dataset) => {
-          dataset.data.push(data["latitud"]);
-        });
+        LatitudInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['latitud'])});
         AltitudInstance.data.labels.push(new Date());
-        AltitudInstance.data.datasets.forEach((dataset) => {
-          dataset.data.push(data["altitud"]);
-        });
+        AltitudInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['altitud'])});
         VelocidadInstance.data.labels.push(new Date());
-        VelocidadInstance.data.datasets.forEach((dataset) => {
-          dataset.data.push(data["velocidad"]);
-        });
+        VelocidadInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['velocidad'])});
         VoltajeInstance.data.labels.push(new Date());
-        VoltajeInstance.data.datasets.forEach((dataset) => {
-          dataset.data.push(data["volt_bateria"]);
-        });
+        VoltajeInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['volt_bateria'])});
         CorrienteInstance.data.labels.push(new Date());
-        CorrienteInstance.data.datasets.forEach((dataset) => {
-          dataset.data.push(data["curr_bateria"]);
-        });
-        if (updateCount > numberElements) {
+        CorrienteInstance.data.datasets.forEach((dataset) =>{dataset.data.push(data['curr_bateria'])});
+        if(updateCount > numberElements){
           LongitudInstance.data.labels.shift();
           LongitudInstance.data.datasets[0].data.shift();
           LatitudInstance.data.labels.shift();
@@ -322,7 +310,8 @@
           VoltajeInstance.data.datasets[0].data.shift();
           CorrienteInstance.data.labels.shift();
           CorrienteInstance.data.datasets[0].data.shift();
-        } else updateCount++;
+        }
+        else updateCount++;
         LongitudInstance.update();
         LatitudInstance.update();
         AltitudInstance.update();
@@ -330,44 +319,69 @@
         VoltajeInstance.update();
         CorrienteInstance.update();
       }
-    }
+    };
 
     function updateData() {
       console.log("Update Data");
       $.ajax({
-        url: "ajax",
-        type: "GET",
-        success: function (data) {
-          var hola = data.users[0];
-          addData(hola);
-        },
+        url:"ajax",
+        type:'GET',
+        success:function(data){
+          var hola=data.users[0]
+          addData(hola)
+         
+        }
+
       });
-      setTimeout(updateData, updateInterval);
+      setTimeout(updateData,updateInterval);
     }
 
     updateData();
-  };
+  }
 </script>
-<style>
-  .container {
-    display: flex;
+  <style>
+  .container{
+    display:flex;
+
   }
 
-  .label {
-    flex: 1;
+  .label{
+    flex:1;
     vertical-align: middle;
     text-align: center;
   }
 
-  .x {
-    flex: 3;
+  .x{
+    flex:3;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.73);
-    margin: 10px;
+    margin: 20px;
   }
 
-  h1 {
+  
+
+  h1{
     text-align: center;
   }
-</style>
+
+  </style>
+
+  <style>
+    #container{
+      height:80vh;
+      display:flex;
+      justify-content:center;
+      align-items: center;
+    }
+    #map{
+      height: 70vh;
+      width: 70vw;
+
+
+    }
+    html,body{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
 {% endblock %}
