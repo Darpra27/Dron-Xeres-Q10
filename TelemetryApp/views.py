@@ -4,6 +4,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from .models import variable
 from django.http import JsonResponse
+import csv
+from django.http import HttpResponse
 
 # Create your views here.
 
