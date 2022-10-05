@@ -55,3 +55,16 @@ def get_variablesa(_request):
     var=variable.objects.order_by('-id')[:1]
     
     return JsonResponse({"users":list(var.values())})
+
+def exportar_csv(request):
+    queryset=variable.objects.all()
+    options=variable._meta
+    fields=[field.name for field in options.fields]
+    response=HttpResponse(content_type='text/csv')
+    response['Content-Disposition']='atachment; filename="datos.csv"'
+    writer=csv.writer(response)
+    writer.writerow([options.get_field(field).verbose_name for field in fields])
+
+    for obj in queryset:
+        writer.writerow([getattr(obj,field)for field in fields])
+    return response
