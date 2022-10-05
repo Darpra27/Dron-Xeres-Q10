@@ -9,4 +9,5 @@ urlpatterns = [
     path('logout', logoutUser, name='logout' ),
     path('telemetry', telemetry, name='telemetry' ),
     path('ajax', get_variablesa, name="getvalores" ),
+    path('descargar',exportar_csv,name='desc')
 ]
