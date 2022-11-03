@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
+<link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
 
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 mb-5">
@@ -11,15 +12,27 @@
 <!-- Projects Start -->
 <div class="container-xxl py-5">
   <div class="container">
-    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.05s" style="max-width: 600px">
+    <div
+      class="text-center mx-auto mb-5 wow fadeInUp"
+      data-wow-delay="0.05s"
+      style="max-width: 600px"
+    >
       <h1 class="mb-4">Visualiza la galería del proyecto</h1>
     </div>
+
     <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.5s">
       <div class="col-lg-4 col-md-6 portfolio-item first">
         <div class="portfolio-img rounded overflow-hidden">
-          <img class="img-fluid" src="{% static 'img/Gallery/todos.jpg' %}" alt="" />
+          <img
+            class="img-fluid"
+            src="{% static 'img/Gallery/todos.jpg' %}"
+            alt=""
+          />
           <div class="portfolio-btn">
-            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{% static 'img/Gallery/todos.jpg' %}" data-lightbox="portfolio"
+            <a
+              class="btn btn-lg-square btn-outline-light rounded-circle mx-1"
+              href="{% static 'img/Gallery/todos.jpg' %}"
+              data-lightbox="portfolio"
               ><i class="fa fa-eye"></i
             ></a>
           </div>
@@ -27,14 +40,23 @@
         <div class="pt-3">
           <p class="text-primary mb-0">Grupo completo</p>
           <hr class="text-primary w-25 my-2" />
-          <h5 class="lh-base">Todos los involucrados en el proyecto Xeres Q10</h5>
+          <h5 class="lh-base">
+            Todos los involucrados en el proyecto Xeres Q10
+          </h5>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 portfolio-item second">
         <div class="portfolio-img rounded overflow-hidden">
-          <img class="img-fluid" src="{% static 'img/Gallery/control.jpg' %}" alt="" />
+          <img
+            class="img-fluid"
+            src="{% static 'img/Gallery/control.jpg' %}"
+            alt=""
+          />
           <div class="portfolio-btn">
-            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{% static 'img/Gallery/control.jpg' %}" data-lightbox="portfolio"
+            <a
+              class="btn btn-lg-square btn-outline-light rounded-circle mx-1"
+              href="{% static 'img/Gallery/control.jpg' %}"
+              data-lightbox="portfolio"
               ><i class="fa fa-eye"></i
             ></a>
           </div>
@@ -42,14 +64,23 @@
         <div class="pt-3">
           <p class="text-primary mb-0">Grupo de control</p>
           <hr class="text-primary w-25 my-2" />
-          <h5 class="lh-base">Encargados de la parte del control del Dron Xeres Q10</h5>
+          <h5 class="lh-base">
+            Encargados de la parte del control del Dron Xeres Q10
+          </h5>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 portfolio-item third">
         <div class="portfolio-img rounded overflow-hidden">
-          <img class="img-fluid" src="{% static 'img/Gallery/electronica.jpg' %}" alt="" />
+          <img
+            class="img-fluid"
+            src="{% static 'img/Gallery/electronica.jpg' %}"
+            alt=""
+          />
           <div class="portfolio-btn">
-            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{% static 'img/Gallery/electronica.jpg' %}" data-lightbox="portfolio"
+            <a
+              class="btn btn-lg-square btn-outline-light rounded-circle mx-1"
+              href="{% static 'img/Gallery/electronica.jpg' %}"
+              data-lightbox="portfolio"
               ><i class="fa fa-eye"></i
             ></a>
           </div>
@@ -57,14 +88,23 @@
         <div class="pt-3">
           <p class="text-primary mb-0">Grupo de electrónica</p>
           <hr class="text-primary w-25 my-2" />
-          <h5 class="lh-base">Encargados de la parte de electrónica del Dron Xeres Q10</h5>
+          <h5 class="lh-base">
+            Encargados de la parte de electrónica del Dron Xeres Q10
+          </h5>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 portfolio-item first">
         <div class="portfolio-img rounded overflow-hidden">
-          <img class="img-fluid" src="{% static 'img/Gallery/mecanica.jpg' %}" alt="" />
+          <img
+            class="img-fluid"
+            src="{% static 'img/Gallery/mecanica.jpg' %}"
+            alt=""
+          />
           <div class="portfolio-btn">
-            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{% static 'img//Gallery/mecanica.jpg' %}" data-lightbox="portfolio"
+            <a
+              class="btn btn-lg-square btn-outline-light rounded-circle mx-1"
+              href="{% static 'img//Gallery/mecanica.jpg' %}"
+              data-lightbox="portfolio"
               ><i class="fa fa-eye"></i
             ></a>
           </div>
@@ -72,44 +112,50 @@
         <div class="pt-3">
           <p class="text-primary mb-0">Grupo de mecánica</p>
           <hr class="text-primary w-25 my-2" />
-          <h5 class="lh-base">Encargados de la parte mecánica del Dron Xeres Q10</h5>
+          <h5 class="lh-base">
+            Encargados de la parte mecánica del Dron Xeres Q10
+          </h5>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 portfolio-item second">
         <div class="portfolio-img rounded overflow-hidden">
-          <img class="img-fluid" src="{% static 'img/Gallery/ti.jpg' %}" alt="" />
+          <img
+            class="img-fluid"
+            src="{% static 'img/Gallery/ti.jpg' %}"
+            alt=""
+          />
           <div class="portfolio-btn">
-            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{% static 'img/Gallery/ti.jpg' %}" data-lightbox="portfolio"
+            <a
+              class="btn btn-lg-square btn-outline-light rounded-circle mx-1"
+              href="{% static 'img/Gallery/ti.jpg' %}"
+              data-lightbox="portfolio"
               ><i class="fa fa-eye"></i
             ></a>
           </div>
         </div>
         <div class="pt-3">
-          <p class="text-primary mb-0">Grupo de Tecnologías de la información</p>
+          <p class="text-primary mb-0">
+            Grupo de Tecnologías de la información
+          </p>
           <hr class="text-primary w-25 my-2" />
-          <h5 class="lh-base">Encargados de las tecnologías de la información del proyecto</h5>
+          <h5 class="lh-base">
+            Encargados de las tecnologías de la información del proyecto
+          </h5>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 portfolio-item third">
-        <div class="portfolio-img rounded overflow-hidden">
-          <img class="img-fluid" src="{% static 'img/Gallery/armando.jpg' %}" alt="" />
-          <div class="portfolio-btn">
-            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{% static 'img/Gallery/armando.jpg' %}" data-lightbox="portfolio"
-              ><i class="fa fa-eye"></i
-            ></a>
-          </div>
-        </div>
-        <div class="pt-3">
-          <p class="text-primary mb-0">Armado primer prototipo</p>
-          <hr class="text-primary w-25 my-2" />
-          <h5 class="lh-base">Grupo de mecánica armando primer prototipo del Dron</h5>
-        </div>
-      </div>
+
       <div class="col-lg-4 col-md-6 portfolio-item first">
         <div class="portfolio-img rounded overflow-hidden">
-          <img class="img-fluid" src="{% static 'img/Gallery/primer_prototipo.jpg' %}" alt="" />
+          <img
+            class="img-fluid"
+            src="{% static 'img/Gallery/primer_prototipo.jpg' %}"
+            alt=""
+          />
           <div class="portfolio-btn">
-            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{% static 'img//Gallery/primer_prototipo.jpg' %}" data-lightbox="portfolio"
+            <a
+              class="btn btn-lg-square btn-outline-light rounded-circle mx-1"
+              href="{% static 'img//Gallery/primer_prototipo.jpg' %}"
+              data-lightbox="portfolio"
               ><i class="fa fa-eye"></i
             ></a>
           </div>
@@ -120,24 +166,51 @@
           <h5 class="lh-base">Primer prototipo armado del Dron Xeres Q10</h5>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 portfolio-item second">
-        <div class="portfolio-img rounded overflow-hidden">
-          <img class="img-fluid" src="{% static 'img/Gallery/pruebas_gps.jpg' %}" alt="" />
-          <div class="portfolio-btn">
-            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{% static 'img/Gallery/pruebas_gps.jpg' %}" data-lightbox="portfolio"
-              ><i class="fa fa-eye"></i
-            ></a>
-          </div>
-        </div>
-        <div class="pt-3">
-          <p class="text-primary mb-0">Prueba GPS</p>
-          <hr class="text-primary w-25 my-2" />
-          <h5 class="lh-base">Grupo de TI probando el GPS en el software Mission Planner</h5>
-        </div>
-      </div>
+    </div>
+    <div class="container">
+      <iframe
+        class="responsive-iframe"
+        src="https://www.youtube.com/embed/oBv7mr4zAb0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="container">
+      <iframe
+        class="responsive-iframe"
+        src="https://www.youtube.com/embed/Rbm3XbBKn5E"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 </div>
 <!-- Projects End -->
+<script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+
+<style>
+  .container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+
+  /* Then style the iframe to fit in the container div with full height and width */
+  .responsive-iframe {
+    position: absolute;
+    padding-bottom: 30px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
 
 {% endblock %}
