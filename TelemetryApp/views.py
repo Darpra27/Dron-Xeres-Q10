@@ -6,6 +6,7 @@ from .models import variable
 from django.http import JsonResponse
 import csv
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -28,6 +29,8 @@ def gallery(request):
 
     return render(request, 'gallery.html',{})
 
+
+@login_required(login_url = 'login')
 def telemetry(request):
 
     return render(request, 'telemetry.html',{})
@@ -43,10 +46,13 @@ def loginUser(request):
 
         if user is not None:
             login(request, user)
-            return redirect('home')
+            if 'next' in request.GET:
+                return redirect(request.GET['next'])
+            else:
+                return redirect('home')
         else:
             messages.error(request, 'Username OR password does not exit')
-
+    
     return render(request, 'login.html', {})
 
 def logoutUser(request):
